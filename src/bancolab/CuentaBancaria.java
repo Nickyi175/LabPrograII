@@ -2,13 +2,13 @@ package bancolab;
 
 import javax.swing.JOptionPane;
 
-public class BancoLab {
+public class CuentaBancaria {
 
     private int codigo;
     private String name;
     private double saldoCuenta;
 
-    public BancoLab(int codigo, String name) {
+    public CuentaBancaria(int codigo, String name) {
         this.codigo = codigo;
         this.name = name;
         saldoCuenta = 500;
