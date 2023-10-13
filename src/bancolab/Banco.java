@@ -12,7 +12,7 @@ public class Banco {
     }
 
     public CuentaBancaria buscar(int codigo) {
-        for (int i = 0; i < numCuentas; i++) {
+        for (int i = 0; i < cuentas.length; i++) {
             if (cuentas[i].getCodigo() == codigo) {
                 return cuentas[i];
             }
@@ -45,21 +45,21 @@ public class Banco {
         }
     }
 
-//    public void calcularIntereses() {
-//        for (int i = 0; i < numCuentas; i++) {
-//            CuentaBancaria cuenta = cuentas[i];
-//            double interesMensual = cuenta.getSaldo() * tasaInteres;
-//            cuenta.Depositar(interesMensual);
-//        }
-//    }
-//
-//    public void lista(double monto) {
-//        for (int i = 0; i < numCuentas; i++) {
-//            CuentaBancaria cuenta = cuentas[i];
-//            if (cuenta.getSaldo() >= monto) {
-//                System.out.println(cuenta.toString());
-//            }
-//        }
-//    }
+    public void calcularIntereses() {
+        for (int i = 0; i < numCuentas; i++) {
+            CuentaBancaria cuenta = cuentas[i];
+            double interesMensual = cuenta.getSaldoCuenta() * tasaInteres;
+            cuenta.Depositar(interesMensual);
+        }
+    }
+
+    public void lista(double monto) {
+        for (int i = 0; i < numCuentas; i++) {
+            CuentaBancaria cuenta = cuentas[i];
+            if (cuenta.getSaldoCuenta() >= monto) {
+                System.out.println(cuenta.toString());
+            }
+        }
+    }
 }
 

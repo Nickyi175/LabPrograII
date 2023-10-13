@@ -14,24 +14,16 @@ public class CuentaBancaria {
         saldoCuenta = 500;
     }
 
+    public double getSaldoCuenta() {
+        return saldoCuenta;
+    }
+
     public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     void Depositar(double monto) {
-        if (monto >= 0) {
+        if (monto > 0) {
             saldoCuenta += monto;
         } else {
             System.out.println("El valor es negativo");
@@ -40,16 +32,16 @@ public class CuentaBancaria {
     }
 
     boolean Retirar(double monto) {
-        if (monto >= 0 && monto <= saldoCuenta) {
+        if (monto > 0 && monto <= saldoCuenta) {
             saldoCuenta -= monto;
             return true;
         }
         return false;
     }
 
-    public String Print() {
+    public void Print() {
 
-        return "BancoLab{" + "codigo:" + codigo + ", nombre: " + name + ", saldo: Lps. " + saldoCuenta + '}';
+        JOptionPane.showMessageDialog(null, "BancoLab{" + "codigo:" + codigo + ", nombre: " + name + ", saldo: Lps. " + saldoCuenta + '}'); ;
 
     }
 
