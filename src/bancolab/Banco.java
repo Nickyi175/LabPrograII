@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package bancolab;
 
-/**
- *
- * @author nathalia.romero
- */
 public class Banco {
     
     private CuentaBancaria[] cuentas;
@@ -53,21 +45,21 @@ public class Banco {
         }
     }
 
-    public void calcularIntereses() {
-        for (int i = 0; i < numCuentas; i++) {
-            CuentaBancaria cuenta = cuentas[i];
-            double interesMensual = cuenta.getSaldo() * tasaInteres;
-            cuenta.Depositar(interesMensual);
-        }
-    }
-
-    public void lista(double monto) {
-        for (int i = 0; i < numCuentas; i++) {
-            CuentaBancaria cuenta = cuentas[i];
-            if (cuenta.getSaldo() >= monto) {
-                System.out.println(cuenta.toString());
-            }
-        }
-    }
+//    public void calcularIntereses() {
+//        for (int i = 0; i < numCuentas; i++) {
+//            CuentaBancaria cuenta = cuentas[i];
+//            double interesMensual = cuenta.getSaldo() * tasaInteres;
+//            cuenta.Depositar(interesMensual);
+//        }
+//    }
+//
+//    public void lista(double monto) {
+//        for (int i = 0; i < numCuentas; i++) {
+//            CuentaBancaria cuenta = cuentas[i];
+//            if (cuenta.getSaldo() >= monto) {
+//                System.out.println(cuenta.toString());
+//            }
+//        }
+//    }
 }
 
