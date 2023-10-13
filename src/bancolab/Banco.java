@@ -15,35 +15,40 @@ public class Banco {
 
 //REVISADO
     public CuentaBancaria Buscar(int codigo) {
-        for (CuentaBancaria cuenta : cuentas) {
-            if (cuenta != null && cuenta.getCodigo() == codigo) {
-                return cuenta;
-            }
-        }
-        return null;
-//        for (int i = 0; i < cuentas.length; i++) {
-//            if (cuentas!=null&&cuentas[i].getCodigo() == codigo) {
-//                return cuentas[i];
+        System.out.println(codigo+"primero de buscar");
+//        for (CuentaBancaria cuenta : cuentas) {
+//            if (cuenta != null && cuenta.getCodigo() == codigo) {
+//                System.out.println(cuenta+"segundo buscar");
+//                return cuenta;
 //            }
 //        }
 //        return null;
+        for (int i = 0; i < cuentas.length; i++) {
+            if (cuentas[i].getCodigo() == codigo) {
+                System.out.println(cuentas+"segundo buscar");
+                return cuentas[i];
+            }
+        }
+        return null;
     }
 //REVISADO
 
     public boolean Agregar(int codigo, String nombre) {
-
+        System.out.println(codigo+"de agregar");
         if (Buscar(codigo) != null) {
-            System.out.println("ya existe el codigo");
+            System.out.println("ya existe el codigo"+codigo);
             return false;
-        }
+        }else{
 
         for (int pos = 0; pos < cuentas.length; pos++) {
             if (cuentas[pos] == null) {
                 CuentaBancaria nuevaCuenta = new CuentaBancaria(codigo, nombre);
                 cuentas[pos] = nuevaCuenta;
                 System.out.println("Se agregó");
+                System.out.println(nombre+" "+codigo);
                 return true;
             }
+        }
         }
 
         return false;
