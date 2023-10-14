@@ -1,19 +1,30 @@
+package bancolab;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bancolab;
 
+
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 
 public class Agencia extends javax.swing.JFrame {
-    
-    
+
+     private Banco banco;
+
     public Agencia() {
-        
-        initComponents();
+        banco = new Banco(10); // Crear un banco con 10 cuentas
+                initComponents();
+
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -24,171 +35,391 @@ public class Agencia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        agregarframe = new javax.swing.JFrame();
+        Agregar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        nombreField = new javax.swing.JTextField();
+        codigoAgregar = new javax.swing.JTextField();
+        AGREGARR = new javax.swing.JButton();
+        trasferirFrame = new javax.swing.JFrame();
+        TRASFERIR = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        codigoOrigenFiel = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        codigoDestinoField = new javax.swing.JTextField();
+        TRASFERIRR = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        montoField = new javax.swing.JTextField();
+        ListarFrame = new javax.swing.JFrame();
+        jLabel7 = new javax.swing.JLabel();
+        montoListaField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        name = new javax.swing.JTextField();
-        code = new javax.swing.JTextField();
-        max = new javax.swing.JTextField();
-        agregar = new javax.swing.JButton();
+        menu = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        agregarBOTON = new javax.swing.JButton();
+        trasferirBOTON = new javax.swing.JButton();
+        iteresesBOTON = new javax.swing.JButton();
+        listaBOTON = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Agregar.setBackground(new java.awt.Color(255, 153, 153));
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setText("CODIGO");
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Agencia");
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel3.setText("NOMBRE");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("OK");
+        AGREGARR.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AGREGARR.setText("AGREGAR");
+        AGREGARR.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AGREGARRMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AgregarLayout = new javax.swing.GroupLayout(Agregar);
+        Agregar.setLayout(AgregarLayout);
+        AgregarLayout.setHorizontalGroup(
+            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarLayout.createSequentialGroup()
+                        .addComponent(AGREGARR)
+                        .addGap(48, 48, 48))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))))
+            .addGroup(AgregarLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(codigoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        AgregarLayout.setVerticalGroup(
+            AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(codigoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(AgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nombreField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(39, 39, 39)
+                .addComponent(AGREGARR)
+                .addGap(42, 42, 42))
+        );
+
+        javax.swing.GroupLayout agregarframeLayout = new javax.swing.GroupLayout(agregarframe.getContentPane());
+        agregarframe.getContentPane().setLayout(agregarframeLayout);
+        agregarframeLayout.setHorizontalGroup(
+            agregarframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 403, Short.MAX_VALUE)
+            .addGroup(agregarframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        agregarframeLayout.setVerticalGroup(
+            agregarframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(agregarframeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(Agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        TRASFERIR.setBackground(new java.awt.Color(153, 0, 0));
+        TRASFERIR.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("C. Cuenta de origen:");
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("C. Cuenta de destino:");
+
+        TRASFERIRR.setText("Transferir");
+        TRASFERIRR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TRASFERIRRActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Monto a transferir:");
+
+        javax.swing.GroupLayout TRASFERIRLayout = new javax.swing.GroupLayout(TRASFERIR);
+        TRASFERIR.setLayout(TRASFERIRLayout);
+        TRASFERIRLayout.setHorizontalGroup(
+            TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TRASFERIRLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(codigoOrigenFiel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TRASFERIRLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(TRASFERIRR)
+                    .addGroup(TRASFERIRLayout.createSequentialGroup()
+                        .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(codigoDestinoField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(montoField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(72, 72, 72))
+        );
+        TRASFERIRLayout.setVerticalGroup(
+            TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TRASFERIRLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(codigoOrigenFiel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52)
+                .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(codigoDestinoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(TRASFERIRLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(montoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(TRASFERIRR)
+                .addGap(36, 36, 36))
+        );
+
+        javax.swing.GroupLayout trasferirFrameLayout = new javax.swing.GroupLayout(trasferirFrame.getContentPane());
+        trasferirFrame.getContentPane().setLayout(trasferirFrameLayout);
+        trasferirFrameLayout.setHorizontalGroup(
+            trasferirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(trasferirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(trasferirFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TRASFERIR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        trasferirFrameLayout.setVerticalGroup(
+            trasferirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(trasferirFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(trasferirFrameLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TRASFERIR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jLabel7.setText("IGRRESEMOTO:");
+
+        jButton1.setText("LISTAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jButton2.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Transferir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setBackground(new java.awt.Color(0, 153, 153));
-        jButton3.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Intereses");
-
-        jButton4.setBackground(new java.awt.Color(0, 153, 153));
-        jButton4.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Lista");
-
-        jButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jButton5.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Salir");
-
-        agregar.setBackground(new java.awt.Color(0, 153, 153));
-        agregar.setFont(new java.awt.Font("Broadway", 0, 14)); // NOI18N
-        agregar.setForeground(new java.awt.Color(255, 255, 255));
-        agregar.setText("Agregar");
-        agregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addComponent(max, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+        javax.swing.GroupLayout ListarFrameLayout = new javax.swing.GroupLayout(ListarFrame.getContentPane());
+        ListarFrame.getContentPane().setLayout(ListarFrameLayout);
+        ListarFrameLayout.setHorizontalGroup(
+            ListarFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarFrameLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(ListarFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(montoListaField, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        ListarFrameLayout.setVerticalGroup(
+            ListarFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarFrameLayout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addGroup(ListarFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(montoListaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(92, 92, 92)
-                    .addComponent(agregar)
-                    .addContainerGap(605, Short.MAX_VALUE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jButton3, jButton4, jButton5});
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(max, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(jButton2)
+        menu.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Agencia");
+
+        agregarBOTON.setText("agregar");
+        agregarBOTON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarBOTONMouseClicked(evt);
+            }
+        });
+        agregarBOTON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarBOTONActionPerformed(evt);
+            }
+        });
+
+        trasferirBOTON.setText("transferir");
+        trasferirBOTON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trasferirBOTONActionPerformed(evt);
+            }
+        });
+
+        iteresesBOTON.setText(" intereses");
+        iteresesBOTON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iteresesBOTONMouseClicked(evt);
+            }
+        });
+
+        listaBOTON.setText("lista");
+        listaBOTON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaBOTONActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                .addContainerGap(170, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(183, 183, 183))
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(iteresesBOTON)
+                    .addComponent(trasferirBOTON, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(listaBOTON))
+                    .addComponent(agregarBOTON, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addGap(45, 45, 45)
+                .addComponent(agregarBOTON)
+                .addGap(32, 32, 32)
+                .addComponent(trasferirBOTON)
                 .addGap(27, 27, 27)
-                .addComponent(jButton3)
+                .addComponent(iteresesBOTON)
                 .addGap(30, 30, 30)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addGap(27, 27, 27))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(116, 116, 116)
-                    .addComponent(agregar)
-                    .addContainerGap(242, Short.MAX_VALUE)))
+                .addComponent(listaBOTON)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jButton3, jButton4, jButton5});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void trasferirBOTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trasferirBOTONActionPerformed
+        this.trasferirFrame.setVisible(true);
+        this.trasferirFrame.setSize(430, 400);
+    }//GEN-LAST:event_trasferirBOTONActionPerformed
+
+    private void agregarBOTONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarBOTONMouseClicked
+    this.agregarframe.setVisible(true);
+    this.agregarframe.setSize(400, 300);
+    
+    }//GEN-LAST:event_agregarBOTONMouseClicked
+
+    private void agregarBOTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBOTONActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_agregarBOTONActionPerformed
 
-    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
-        Banco bank=new Banco(12);
-        
-//        for (int i = 0; i < bank.size(); i++) {
-//
-//            if (ListadeUsuarios.get(i).getnombre().equals(jTextField1.getText())) {
-//                JOptionPane.showMessageDialog(null, "Usuario Existente");
-//                usuarioexistente = true;
-//
-//            }
-//
-//        }
-        bank.Agregar(Integer.valueOf(code.getText()), name.getText());
-    }//GEN-LAST:event_agregarActionPerformed
+    private void listaBOTONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaBOTONActionPerformed
+        // TODO add your handling code here:
+         this.ListarFrame.setVisible(true);
+//        this.menu.setVisible(false);
+        this.ListarFrame.setSize(400,300);
+    }//GEN-LAST:event_listaBOTONActionPerformed
 
+    private void AGREGARRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AGREGARRMouseClicked
+
+   try {
+                    int codigo = Integer.parseInt(codigoAgregar.getText());
+                    String nombre = nombreField.getText();
+
+                    boolean agregada = banco.agregar(codigo, nombre);
+
+                    if (agregada) {
+                        JOptionPane.showMessageDialog(null, "Cuenta agregada con éxito.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se pudo agregar la cuenta. Código duplicado o banco lleno.");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Ingrese un código válido.");
+                }
+    
+    }//GEN-LAST:event_AGREGARRMouseClicked
+
+    private void TRASFERIRRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRASFERIRRActionPerformed
+try {
+                    int codigoOrigen = Integer.parseInt(codigoOrigenFiel.getText());
+                    int codigoDestino = Integer.parseInt(codigoDestinoField.getText());
+                    double monto = Double.parseDouble(montoField.getText());
+
+                    boolean transferenciaExitosa = banco.transferir(codigoOrigen, codigoDestino, monto);
+
+                    if (transferenciaExitosa) {
+                        JOptionPane.showMessageDialog(null, "Transferencia realizada con éxito.");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se pudo realizar la transferencia. Verifique los datos.");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Ingrese datos válidos.");
+                }
+    
+    }//GEN-LAST:event_TRASFERIRRActionPerformed
+
+    private void iteresesBOTONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iteresesBOTONMouseClicked
+        // TODO add your handling code here:
+         banco.intereses();
+                JOptionPane.showMessageDialog(null, "Intereses aplicados a todas las cuentas.");
+            
+    }//GEN-LAST:event_iteresesBOTONMouseClicked
+
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        // TODO add your handling code here:
+          try {
+            double monto = Double.parseDouble(montoListaField.getText());
 
+            // Obtener la información de las cuentas
+            String infoCuentas = banco.obtenerInfoCuentas(monto);
+
+            // Mostrar la información en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Cuentas con saldo mayor o igual a " + monto + ":\n" + infoCuentas, "Información de Cuentas", JOptionPane.INFORMATION_MESSAGE);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Ingrese un monto válido.");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -217,6 +448,13 @@ public class Agencia extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Agencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -227,16 +465,31 @@ public class Agencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregar;
-    private javax.swing.JTextField code;
+    private javax.swing.JButton AGREGARR;
+    private javax.swing.JPanel Agregar;
+    private javax.swing.JFrame ListarFrame;
+    private javax.swing.JPanel TRASFERIR;
+    private javax.swing.JButton TRASFERIRR;
+    private javax.swing.JButton agregarBOTON;
+    private javax.swing.JFrame agregarframe;
+    private javax.swing.JTextField codigoAgregar;
+    private javax.swing.JTextField codigoDestinoField;
+    private javax.swing.JTextField codigoOrigenFiel;
+    private javax.swing.JButton iteresesBOTON;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField max;
-    private javax.swing.JTextField name;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton listaBOTON;
+    private javax.swing.JPanel menu;
+    private javax.swing.JTextField montoField;
+    private javax.swing.JTextField montoListaField;
+    private javax.swing.JTextField nombreField;
+    private javax.swing.JButton trasferirBOTON;
+    private javax.swing.JFrame trasferirFrame;
     // End of variables declaration//GEN-END:variables
 }

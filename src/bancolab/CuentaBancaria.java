@@ -5,44 +5,43 @@ import javax.swing.JOptionPane;
 public class CuentaBancaria {
 
     private int codigo;
-    private String name;
-    private double saldoCuenta;
+    private String nombreCliente;
+    private double saldo;
 
-    public CuentaBancaria(int codigo, String name) {
+    public CuentaBancaria(int codigo, String nombreCliente) {
         this.codigo = codigo;
-        this.name = name;
-        saldoCuenta = 500;
-    }
-
-    public double getSaldoCuenta() {
-        return saldoCuenta;
+        this.nombreCliente = nombreCliente;
+        this.saldo = 500; // Saldo inicial por defecto
     }
 
     public int getCodigo() {
         return codigo;
     }
 
-    void Depositar(double monto) {
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+    
+
+    public void depositar(double monto) {
         if (monto > 0) {
-            saldoCuenta += monto;
-        } else {
-            System.out.println("El valor es negativo");
-            JOptionPane.showMessageDialog(null, "El valor es negativo");
+            saldo += monto;
         }
     }
 
-    boolean Retirar(double monto) {
-        if (monto > 0 && monto <= saldoCuenta) {
-            saldoCuenta -= monto;
+    public boolean retirar(double monto) {
+        if (monto > 0 && monto <= saldo) {
+            saldo -= monto;
             return true;
         }
         return false;
     }
-
-    public void Print() {
-
-        JOptionPane.showMessageDialog(null, "BancoLab{" + "codigo:" + codigo + ", nombre: " + name + ", saldo: Lps. " + saldoCuenta + '}'); ;
-
+     public void print() {
+        System.out.println("Código: " + codigo + ", Nombre del cliente: " + nombreCliente + ", Saldo: " + saldo);
     }
 
 }
